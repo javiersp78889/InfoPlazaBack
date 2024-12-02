@@ -2,6 +2,7 @@ import { Router } from "express";
 import { createLibros, findLibros } from "../handlers/libros";
 import { verifyLibro } from "../middleware/verifyLibro";
 import { DataLibro } from "../middleware/DataLibro";
+import { NumeroLibro } from "../middleware/NumeroLibro";
 const router = Router()
 
 
