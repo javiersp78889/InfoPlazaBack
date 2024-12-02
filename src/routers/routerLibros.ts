@@ -6,7 +6,7 @@ const router = Router()
 
 
 router.post('/find', findLibros)
-router.post('/', DataLibro, verifyLibro, createLibros)
+router.post('/', DataLibro, verifyLibro,NumeroLibro, createLibros)
 
 
 
