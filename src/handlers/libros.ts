@@ -18,7 +18,7 @@ export const createLibros = async (req, res) => {
     try {
         console.log(`creando`)
         const { nombre, autor, estante, cantidad,numero } = req.body
-        const name = nombre.toLowerCase().trim()
+        const name = nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()
         const creator = autor.toLowerCase().trim()
 
         const obj = {
