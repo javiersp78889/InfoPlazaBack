@@ -6,7 +6,12 @@ export const findLibros = async (req, res) => {
     console.log(nombre)
     const name = nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()
 
-    const response = await Libros.findAll({ where: nombre: {[Op.iLike]: `%${name}%`} as any,  })
+    const response = await Libros.findAll({ 
+    where: { 
+        nombre: { [Op.iLike]: `%${name}%` } 
+    }
+    });
+
     if (response) {
         res.json(response)
         console.log(response)
