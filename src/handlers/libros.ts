@@ -3,7 +3,7 @@ import Libros from "../models/Libros.models"
 export const findLibros = async (req, res) => {
     const { nombre } = req.body
     console.log(nombre)
-    const name = nombre.toLowerCase().trim()
+    const name = nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()
 
     const response = await Libros.findAll({ where: { nombre: name } })
     if (response) {
