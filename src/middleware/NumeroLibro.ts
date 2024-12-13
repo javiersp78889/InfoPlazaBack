@@ -10,7 +10,7 @@ export const NumeroLibro = async (req, res, next) => {
         console.log(response)
         if (response.length > 0) {
             console.log('mayor a 0')
-            res.status(401).json({ mensaje: 'Este Libro ya existe' })
+            res.status(401).json({ mensaje: 'Este Libro ya existe', response })
         } else {
             next()
         }
