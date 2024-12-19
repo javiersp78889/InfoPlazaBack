@@ -2,6 +2,7 @@ import express from 'express'
 import routerLibros from './routers/routerLibros';
 import db from './db';
 import cors from 'cors'
+import routerComputadoras from './routers/routerComputadoras'
 
 const app = express()
 
@@ -21,8 +22,9 @@ const ConnectDB = async () => {
 ConnectDB()
 
 app.use(express.json())
-app.use(cors({ origin : '*'}))
+app.use(cors({ origin: '*' }))
 app.use(express.urlencoded({ extended: true }))
 app.use('/libros', routerLibros)
+app.use('/computadoras', routerComputadoras)
 
 export default app;
